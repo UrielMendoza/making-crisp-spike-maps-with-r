@@ -6,7 +6,7 @@
 # install rayshader & rayrender from the source
 # devtools::install_github("tylermorganwall/rayshader")
 # devtools::install_github("tylermorganwall/rayrender")
-
+options(repos = c(CRAN = "https://cloud.r-project.org"))
 # libraries we need
 libs <- c(
     "tidyverse", "R.utils",
@@ -27,7 +27,7 @@ invisible(lapply(libs, library, character.only = T))
 ### ------------------------
 url <-
     "https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/kontur_datasets/kontur_population_DE_20220630.gpkg.gz"
-file_name <- "germany-population.gpkg.gz"
+file_name <- "mexico-population.gpkg.gz"
 
 get_population_data <- function() {
     res <- httr::GET(
